@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Alice",
+        "age": 30,
+        "city": "New York",
+        "isS_student": false,
+        "courses": [
+            "Math",
+            "Science"
+        ]
+    },
+    {
+        "name": "Brandon",
+        "age": "28",
+        "city": "Dallas"
+    }
+]

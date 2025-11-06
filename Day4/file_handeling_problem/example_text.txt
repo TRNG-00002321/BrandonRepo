@@ -1,0 +1,2 @@
+this text will originally exist in example_text.txt file
+but it will be read and copied into example_text2.txt file
