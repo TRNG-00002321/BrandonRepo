@@ -23,8 +23,9 @@ employees ={
 }
 
 def increase_salary():
-    for _ in range(3):
+    for employee in employees.values():
+        employee["Salary"] *= 1.1
+
 
 increase_salary()
-
-#print(employees["Employee1"]["Salary"])
+print(employees)
