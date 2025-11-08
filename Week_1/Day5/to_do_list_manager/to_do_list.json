@@ -1,0 +1,27 @@
+[
+    {
+        "Day": "Day 1",
+        "Task": "Walk dogs.",
+        "Completed": false
+    },
+    {
+        "Day": "Day 2",
+        "Task": "Do homework.",
+        "Completed": false
+    },
+    {
+        "Day": "Day 3",
+        "Task": "Try not to have a meltdown.",
+        "Completed": false
+    },
+    {
+        "Day": "Day 4",
+        "Task": "World domination",
+        "Completed": false
+    },
+    {
+        "Day": "Day 5",
+        "Task": "dsjknjdsf",
+        "Completed": false
+    }
+]

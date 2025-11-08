@@ -60,8 +60,8 @@ import pandas as pd
 #increase max row
 
     #read json
-# df = pd.read_json('data.json')
-# print(df.to_string())
+df = pd.read_json('data.json')
+print(df.to_string())
 
 
 #remove nulls
@@ -70,9 +70,9 @@ import pandas as pd
 # print(df.to_string())
 
 #return new data frame with no empty cells
-df = pd.read_json('data.json')
-new_df = df.dropna()
-print(new_df.to_string())
+# df = pd.read_json('data.json')
+# new_df = df.dropna()
+# print(new_df.to_string())
 
                                     # VIEWING
 
