@@ -2,26 +2,26 @@
     {
         "Day": "Day 1",
         "Task": "Walk dogs.",
-        "Completed": false
+        "Completed": "No"
     },
     {
         "Day": "Day 2",
         "Task": "Do homework.",
-        "Completed": false
+        "Completed": "No"
     },
     {
         "Day": "Day 3",
         "Task": "Try not to have a meltdown.",
-        "Completed": false
+        "Completed": "No"
     },
     {
         "Day": "Day 4",
         "Task": "World domination",
-        "Completed": false
+        "Completed": "No"
     },
     {
-        "Day": "Day 5",
-        "Task": "dsjknjdsf",
-        "Completed": false
+        "Day": "Day 63",
+        "Task": "Writing more programs",
+        "Completed": "No"
     }
 ]
