@@ -10,16 +10,11 @@ import json
 import pandas as pd
 import os
 
-# function to read out the to do list every time it is called
-# print the json file to display the to do list
-# along with the list itself
 def print_out_to_do_list():
 
     print("To do list: ")
     df = pd.read_json('to_do_list.json')
     print(df.to_string(index=0))
-
-
 
 # this function will simply display options. it does not return anything.
 def display_options():
@@ -31,8 +26,6 @@ def display_options():
     print("3. Mark an item on your list as complete: ")
     print("4. Delete an item from your list: ")
     print("**********************************************")
-
-
 
 #function to create new item in list that will be called in another function
 def create_new_item_in_list(data):
@@ -52,8 +45,6 @@ def create_new_item_in_list(data):
     #the data will be added to the json file in the other function
     data.append(new_item)
     return(data)
-
-
 
 #need a function that marks the item as complete
 def mark_item_complete():
@@ -75,13 +66,9 @@ def mark_item_complete():
             break
 
     # save the updated list
-
     with open("to_do_list.json", 'w') as f:
         json.dump(data, f, indent=4)
 
-
-# for this one, I need to display all days
-# allow user to select which day he would like to mark as complete
 def delete_item_from_list():
 
     # load the list for user to see which one they need to delete
@@ -91,17 +78,14 @@ def delete_item_from_list():
     day_num = input("Day ")
     day_to_delete = (f"Day {day_num}")
 
-    #we need to load the data here and filter out the correct day and save the list as a whole
+    # we need to load the data here and filter out the correct day and save the list as a whole
     with open('to_do_list.json', 'r') as f:
         data = json.load(f)
 
-    #filter the data and update json file
+    # filter the data and update json file
     data = [item for item in data if item["Day"] != day_to_delete]
     with open('to_do_list.json', 'w') as f:
         json.dump(data, f, indent=4)
-
-    #if they do not have anything to mark complete, they can select "back"
-
 
 #update the list to add to the list
 def add_item_to_list():
@@ -111,8 +95,7 @@ def add_item_to_list():
     with open('to_do_list.json', 'r') as f:
         data = json.load(f)
 
-    #now that it is loaded, I can append a new item to the list
-    #we call the function to add a new item to the list
+    # now that it is loaded, I can append a new item to the list
     create_new_item_in_list(data)
 
     # writing the appended list to json file
@@ -123,9 +106,7 @@ def add_item_to_list():
     with open('to_do_list.json', 'r') as f:
         data = json.load(f)
 
-
-
-    #this is where we will call everything
+    # this is where we will call everything
 print("Hello, welcome to your to-do list!")
 
 #selection
@@ -144,8 +125,9 @@ while(end == "n"):
         print_out_to_do_list()
     elif(selection == 3):
         mark_item_complete()
-        pass
     elif(selection == 4):
         delete_item_from_list()
 
     end = input("Exit out of todo list?: (y/n): ")#actions performed here
+
+print("Thank you! Have a great day!")
