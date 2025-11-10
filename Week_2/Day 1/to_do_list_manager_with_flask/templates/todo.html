@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+    <p>Day — Task — Completed</p>
+    {% for item in tasks %}
+    <p>{{ item["Day"] }} - {{ item["Task"] }} - {{ item["Completed"] }}</p>
+    {% endfor %}
+</body>
+</html>
