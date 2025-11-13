@@ -1,0 +1,26 @@
+[
+  {
+    "page": "Home",
+    "name": "Brandon Tsuchiya",
+    "degree": "Computer Science",
+    "interests": ["Game Development"]
+  },
+  {
+    "page": "Contact",
+    "email": "balextsu@gmail.com",
+    "number": "123-456-7890"
+  },
+  {
+    "page": "Projects",
+    "projects": [
+      {
+        "title": "Deep Earth",
+        "description": "Deep Earth is a psychological survival horror video game."
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "My personal website built with Flask."
+      }
+    ]
+  }
+]

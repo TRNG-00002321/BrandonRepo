@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the most used password in the world?",
+    "choices": {
+      "A": "password",
+      "B": "123456",
+      "C": "qwerty",
+      "D": "letmein"
+    },
+    "correct": "B"
+  },
+  {
+    "question": "What is the only food that never spoils?",
+    "choices": {
+      "A": "Twinkies",
+      "B": "Honey",
+      "C": "Instant noodles",
+      "D": "Spam"
+    },
+    "correct": "B"
+  },
+    {
+    "question": "What is the national animal of Scotland?",
+    "choices": {
+      "A": "Horse",
+      "B": "Sheep",
+      "C": "Unicorn",
+      "D": "Nessie"
+    },
+    "correct": "C"
+  }
+]
