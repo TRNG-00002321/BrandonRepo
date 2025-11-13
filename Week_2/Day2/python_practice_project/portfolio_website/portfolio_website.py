@@ -8,20 +8,31 @@ Requirements:
 """
 
 import json
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 #flask setup
 app = Flask(__name__)
 
+
+#Home page
 @app.route('/')
 def hello_world():
-    return("Hello World!")
+
+    #in home, i need a button that takes you to projects and contact page
+    return render_template("home.html")
 
 @app.route('/projects')
 def projects():
     with open("project_data.json") as f:
         data = json.load(f)
-        return("We are in the projects page!")
+
+        project_data = {}
+        for item in data:
+            if(item["page"] == "Projects"):
+                project_data = item
+                break
+
+        return render_template("projects.html", data=project_data)
 
 @app.route('/contact')
 def contact():
