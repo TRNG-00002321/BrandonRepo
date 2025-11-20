@@ -1,0 +1,7 @@
+2025-11-19 13:23:02,240 INFO [main] LogDemo [LogDemo.java:9] - This is info
+2025-11-19 13:23:02,243 WARN [main] LogDemo [LogDemo.java:10] - This is warn
+2025-11-19 13:23:02,243 ERROR [main] LogDemo [LogDemo.java:11] - This is error
+2025-11-19 14:02:28,779 INFO [main] LogDemo [LogDemo.java:9] - This is info
+2025-11-19 14:02:28,781 WARN [main] LogDemo [LogDemo.java:10] - This is warn
+2025-11-19 14:02:28,781 ERROR [main] LogDemo [LogDemo.java:11] - This is error
+2025-11-19 14:02:28,781 INFO [main] LogDemo [LogDemo.java:20] - n is less than or equal to 2
