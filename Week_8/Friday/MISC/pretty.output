@@ -1,0 +1,267 @@
+@authentication
+Feature: User Authentication # features/authentication.feature:2
+  As a registered user
+  I want to log in and out of the application
+  So that I can access protected content
+  @authentication
+  Feature: User Authentication  # features/authentication.feature:2
+
+  @smoke @positive
+  Scenario: Successful login with valid credentials                          # features/authentication.feature:11
+    Given the user is on the login page                                      # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "tomsmith"                                 # None
+    And the user enters password "SuperSecretPassword!"                      # None
+    And the user clicks the login button                                     # None
+    Then the user should be logged in successfully                           # None
+    And the user should see welcome message "You logged into a secure area!" # None
+
+  @negative
+  Scenario: Failed login with invalid password                            # features/authentication.feature:19
+    Given the user is on the login page                                   # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "tomsmith"                              # None
+    And the user enters password "NotSoSuperSecretPassword?"              # None
+    And the user clicks the login button                                  # None
+    Then the user should not be logged in successfully                    # None
+    Then the user should see an error message "Your password is invalid!" # None
+
+  @negative
+  Scenario: Failed login with invalid username                            # features/authentication.feature:28
+    Given the user is on the login page                                   # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "tomsmiths"                             # None
+    And the user enters password "SuperSecretPassword!"                   # None
+    And the user clicks the login button                                  # None
+    Then the user should not be logged in successfully                    # None
+    Then the user should see an error message "Your username is invalid!" # None
+
+  @logout
+  Scenario: Successful logout                                            # features/authentication.feature:37
+    Given the user is on the login page                                  # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    Given the user is logged in as "tomsmith"                            # None
+    When the user clicks the logout button                               # None
+    Then the user should be logged out                                   # None
+    And the user should see message "You logged out of the secure area!" # None
+
+  @data-driven
+  Scenario Outline: Login validation with multiple credentials -- @1.1   # features/authentication.feature:52
+    Given the user is on the login page                                  # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "tomsmith"                             # None
+    And the user enters password "SuperSecretPassword!"                  # None
+    And the user clicks the login button                                 # None
+    Then the login result should be "success"                            # None
+
+  @data-driven
+  Scenario Outline: Login validation with multiple credentials -- @1.2   # features/authentication.feature:53
+    Given the user is on the login page                                  # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "invaliduser"                          # None
+    And the user enters password "SuperSecretPassword!"                  # None
+    And the user clicks the login button                                 # None
+    Then the login result should be "failed"                             # None
+
+  @data-driven
+  Scenario Outline: Login validation with multiple credentials -- @1.3   # features/authentication.feature:54
+    Given the user is on the login page                                  # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username "tomsmith"                             # None
+    And the user enters password "wrongpassword"                         # None
+    And the user clicks the login button                                 # None
+    Then the login result should be "failed"                             # None
+
+  @data-driven
+  Scenario Outline: Login validation with multiple credentials -- @1.4   # features/authentication.feature:55
+    Given the user is on the login page                                  # features/steps/auth_steps.py:9
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\auth_steps.py", line 13, in step_on_login_page
+          context.login_page = LoginPage(context.driver)
+                                         ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user enters username ""                                     # None
+    And the user enters password ""                                      # None
+    And the user clicks the login button                                 # None
+    Then the login result should be "failed"                             # None
+
+@forms
+Feature: Form Interactions # features/forms.feature:2
+  As a user
+  I want to interact with various form elements
+  So that I can complete different tasks
+  @checkboxes
+  Scenario: Toggle checkboxes                # features/forms.feature:8
+    Given the user is on the checkboxes page # features/steps/form_steps.py:13
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\form_steps.py", line 15, in step_on_checkboxes_page
+          context.driver.get(CHECKBOXES_URL)
+          ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user checks all checkboxes      # None
+    Then all checkboxes should be checked    # None
+    When the user unchecks all checkboxes    # None
+    Then all checkboxes should be unchecked  # None
+
+  @dropdown
+  Scenario Outline: Select dropdown options -- @1.1    # features/forms.feature:23
+    Given the user is on the dropdown page             # features/steps/form_steps.py:41
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\form_steps.py", line 43, in step_on_dropdown_page
+          context.driver.get(DROPDOWN_URL)
+          ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user selects "Option 1" from the dropdown # None
+    Then the dropdown should show "Option 1" selected  # None
+
+  @dropdown
+  Scenario Outline: Select dropdown options -- @1.2    # features/forms.feature:24
+    Given the user is on the dropdown page             # features/steps/form_steps.py:41
+      Traceback (most recent call last):
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\model.py", line 1991, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\matchers.py", line 105, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "features\steps\form_steps.py", line 43, in step_on_dropdown_page
+          context.driver.get(DROPDOWN_URL)
+          ^^^^^^^^^^^^^^
+        File "C:\Users\balex\Desktop\Projects\Week_8\Friday\.venv\Lib\site-packages\behave\runner.py", line 430, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'driver'
+
+    When the user selects "Option 2" from the dropdown # None
+    Then the dropdown should show "Option 2" selected  # None
+
+  @input
+  Scenario: Clear and type in input field                 # features/forms.feature:27
+    Given the user is on the input page                   # None
+    When the user clears the input field                  # None
+    And the user types "Hello World" into the input field # None
+    Then the input field should contain "Hello World"     # None
+
+  @upload
+  Scenario: Upload a file                         # features/forms.feature:34
+    Given the user is on the file upload page     # None
+    When the user uploads the file "testfile.txt" # None
+    Then the file upload should be successful     # None
+
